@@ -98,7 +98,7 @@ if [ "$(command -v distro-info 2> /dev/null)" ]; then
 	done
 elif [[ "${distroidlike}" == *"rhel"* ]] || [ "${distroid}" == "rhel" ]; then
 	# RHEL/CentOS 7 EOL 2024-06-30. Will be unsupported after this date.
-	if [ "${distroversionrh}" -lt "8" ] && [ "$(date +%s)" -lt "1719705600" ]; then
+	if [ "${distroversionrh}" -lt "8" ] && [ "$(date +%s)" -gt "1719705600" ]; then
 		distrosupport="unsupported"
 	else
 		distrosupport="supported"
